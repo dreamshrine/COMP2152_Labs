@@ -38,7 +38,6 @@ def load_findings(filename):
         reader = csv.DictReader(f)
         return list(reader)
 
-
 def count_by_field(findings, field):
     counts = {}
     for f in findings:
@@ -46,10 +45,8 @@ def count_by_field(findings, field):
         counts[val] = counts.get(val, 0) + 1
     return counts
 
-
 def filter_findings(findings, field, value):
     return [f for f in findings if f[field] == value]
-
 
 def top_subdomains(findings, n):
     counts = count_by_field(findings, "subdomain")
